@@ -95,12 +95,12 @@
 
 
 
-<meta name="description" content="Jenkins+gradle+svn+windows自动化编译、上传svn最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从svn上面拉取代码到本地上编译生成apk文件，再自动上传到svn，并可以自动发出邮件给相关人员。虽然网上也有很多关于这方面的资料。但是这篇文章有网上没有的 apk注入svn源码路径、版本号、jenkins build号apk注入svn源">
+<meta name="description" content="Jenkins+gradle+svn+windows自动化编译、上传svn最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从 svn上面拉取代码到本地上编译生成apk文件，再自动上传到svn，并可以自动发出邮件给 相关人员。虽然网上也有很多关于这方面的资料。但是这篇文章有网上没有的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jenkins+Gradle+svn搭建">
 <meta property="og:url" content="http://yoursite.com/2017/08/30/Jenkins搭建/index.html">
 <meta property="og:site_name" content="zipp">
-<meta property="og:description" content="Jenkins+gradle+svn+windows自动化编译、上传svn最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从svn上面拉取代码到本地上编译生成apk文件，再自动上传到svn，并可以自动发出邮件给相关人员。虽然网上也有很多关于这方面的资料。但是这篇文章有网上没有的 apk注入svn源码路径、版本号、jenkins build号apk注入svn源">
+<meta property="og:description" content="Jenkins+gradle+svn+windows自动化编译、上传svn最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从 svn上面拉取代码到本地上编译生成apk文件，再自动上传到svn，并可以自动发出邮件给 相关人员。虽然网上也有很多关于这方面的资料。但是这篇文章有网上没有的">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/download.png">
 <meta property="og:image" content="http://yoursite.com/images/new_construc.png">
@@ -115,10 +115,10 @@
 <meta property="og:image" content="http://yoursite.com/images/node_conect.png">
 <meta property="og:image" content="http://yoursite.com/images/set_gradle.png">
 <meta property="og:image" content="http://yoursite.com/images/set_app_build.png">
-<meta property="og:updated_time" content="2017-08-30T09:50:40.021Z">
+<meta property="og:updated_time" content="2017-08-30T09:55:48.568Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jenkins+Gradle+svn搭建">
-<meta name="twitter:description" content="Jenkins+gradle+svn+windows自动化编译、上传svn最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从svn上面拉取代码到本地上编译生成apk文件，再自动上传到svn，并可以自动发出邮件给相关人员。虽然网上也有很多关于这方面的资料。但是这篇文章有网上没有的 apk注入svn源码路径、版本号、jenkins build号apk注入svn源">
+<meta name="twitter:description" content="Jenkins+gradle+svn+windows自动化编译、上传svn最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从 svn上面拉取代码到本地上编译生成apk文件，再自动上传到svn，并可以自动发出邮件给 相关人员。虽然网上也有很多关于这方面的资料。但是这篇文章有网上没有的">
 <meta name="twitter:image" content="http://yoursite.com/images/download.png">
 
 
@@ -441,9 +441,11 @@
       
 
       
-        <h1 id="Jenkins-gradle-svn-windows自动化编译、上传svn"><a href="#Jenkins-gradle-svn-windows自动化编译、上传svn" class="headerlink" title="Jenkins+gradle+svn+windows自动化编译、上传svn"></a>Jenkins+gradle+svn+windows自动化编译、上传svn</h1><pre><code>最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从svn上面拉取代码到本地上编译生成apk文件，再自动上传到svn，并可以自动发出邮件给相关人员。虽然网上也有很多关于这方面的资料。但是这篇文章有网上没有的
-</code></pre><p><strong>apk注入svn源码路径、版本号、jenkins build号</strong><br><br><strong>apk注入svn源码路径、版本号、jenkins build号</strong><br><br><strong>apk注入svn源码路径、版本号、jenkins build号</strong><br></p>
-<a id="more"></a>
+        <h1 id="Jenkins-gradle-svn-windows自动化编译、上传svn"><a href="#Jenkins-gradle-svn-windows自动化编译、上传svn" class="headerlink" title="Jenkins+gradle+svn+windows自动化编译、上传svn"></a>Jenkins+gradle+svn+windows自动化编译、上传svn</h1><pre><code>最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从
+svn上面拉取代码到本地上编译生成apk文件，再自动上传到svn，并可以自动发出邮件给
+相关人员。虽然网上也有很多关于这方面的资料。但是这篇文章有网上没有的
+</code></pre><a id="more"></a>
+<p><strong>apk注入svn源码路径、版本号、jenkins build号</strong><br><br><strong>apk注入svn源码路径、版本号、jenkins build号</strong><br><br><strong>apk注入svn源码路径、版本号、jenkins build号</strong><br></p>
 <h2 id="需求介绍"><a href="#需求介绍" class="headerlink" title="需求介绍"></a>需求介绍</h2><pre><code>1.由于公司开发需求，研发人员给测试人员发出svn源码路径、svn版本号，测试人员构建自动化打包、
 编译apk文件自动上传到svn上。
 2.为了追溯线上问题，apk文件需要注入编译svn源码路径、版本号以及jenkins build号。

@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="zipp, 贺志鹏" />
 
 
 
@@ -95,31 +95,31 @@
 
 
 
-<meta name="description" content="#Jenkins+gradle+svn+windows自动化编译、上传svn#    最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从svn上面拉取代码到本地上编译生成apk文件，再    自动上传到svn，并可以自动发出邮件给相关人员。虽然网上也有很多关于这方面的资料。但是这篇文章有网上没有的apk注入svn源码路径、版本号、jenkins build号">
+<meta name="description" content="Jenkins+gradle+svn+windows自动化编译、上传svn最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从svn上面拉取代码到本地上编译生成apk文件，再自动上传到svn，并可以自动发出邮件给相关人员。虽然网上也有很多关于这方面的资料。但是这篇文章有网上没有的 apk注入svn源码路径、版本号、jenkins build号apk注入svn源">
 <meta property="og:type" content="article">
-<meta property="og:title" content="zipp">
+<meta property="og:title" content="Jenkins+Gradle+svn搭建">
 <meta property="og:url" content="http://yoursite.com/2017/08/30/Jenkins搭建/index.html">
 <meta property="og:site_name" content="zipp">
-<meta property="og:description" content="#Jenkins+gradle+svn+windows自动化编译、上传svn#    最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从svn上面拉取代码到本地上编译生成apk文件，再    自动上传到svn，并可以自动发出邮件给相关人员。虽然网上也有很多关于这方面的资料。但是这篇文章有网上没有的apk注入svn源码路径、版本号、jenkins build号">
+<meta property="og:description" content="Jenkins+gradle+svn+windows自动化编译、上传svn最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从svn上面拉取代码到本地上编译生成apk文件，再自动上传到svn，并可以自动发出邮件给相关人员。虽然网上也有很多关于这方面的资料。但是这篇文章有网上没有的 apk注入svn源码路径、版本号、jenkins build号apk注入svn源">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2017/08/30/Jenkins搭建/download.png">
-<meta property="og:image" content="http://yoursite.com/2017/08/30/Jenkins搭建/new_construc.png">
-<meta property="og:image" content="http://yoursite.com/2017/08/30/Jenkins搭建/setting.png">
-<meta property="og:image" content="http://yoursite.com/2017/08/30/Jenkins搭建/set_channel.png">
-<meta property="og:image" content="http://yoursite.com/2017/08/30/Jenkins搭建/set_ip.png">
-<meta property="og:image" content="http://yoursite.com/2017/08/30/Jenkins搭建/set_sourCode.png">
-<meta property="og:image" content="http://yoursite.com/2017/08/30/Jenkins搭建/set_invoke.png">
-<meta property="og:image" content="http://yoursite.com/2017/08/30/Jenkins搭建/set_command.png">
-<meta property="og:image" content="http://yoursite.com/2017/08/30/Jenkins搭建/set_last.png">
-<meta property="og:image" content="http://yoursite.com/2017/08/30/Jenkins搭建/set_node.png">
-<meta property="og:image" content="http://yoursite.com/2017/08/30/Jenkins搭建/node_conect.png">
-<meta property="og:image" content="http://yoursite.com/2017/08/30/Jenkins搭建/set_gradle.png">
-<meta property="og:image" content="http://yoursite.com/2017/08/30/Jenkins搭建/set_app_build.png">
-<meta property="og:updated_time" content="2017-08-28T09:28:45.516Z">
+<meta property="og:image" content="http://yoursite.com/images/download.png">
+<meta property="og:image" content="http://yoursite.com/images/new_construc.png">
+<meta property="og:image" content="http://yoursite.com/images/setting.png">
+<meta property="og:image" content="http://yoursite.com/images/set_channel.png">
+<meta property="og:image" content="http://yoursite.com/images/set_ip.png">
+<meta property="og:image" content="http://yoursite.com/images/set_sourCode.png">
+<meta property="og:image" content="http://yoursite.com/images/set_invoke.png">
+<meta property="og:image" content="http://yoursite.com/images/set_command.png">
+<meta property="og:image" content="http://yoursite.com/images/set_last.png">
+<meta property="og:image" content="http://yoursite.com/images/set_node.png">
+<meta property="og:image" content="http://yoursite.com/images/node_conect.png">
+<meta property="og:image" content="http://yoursite.com/images/set_gradle.png">
+<meta property="og:image" content="http://yoursite.com/images/set_app_build.png">
+<meta property="og:updated_time" content="2017-08-30T09:50:40.021Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zipp">
-<meta name="twitter:description" content="#Jenkins+gradle+svn+windows自动化编译、上传svn#    最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从svn上面拉取代码到本地上编译生成apk文件，再    自动上传到svn，并可以自动发出邮件给相关人员。虽然网上也有很多关于这方面的资料。但是这篇文章有网上没有的apk注入svn源码路径、版本号、jenkins build号">
-<meta name="twitter:image" content="http://yoursite.com/2017/08/30/Jenkins搭建/download.png">
+<meta name="twitter:title" content="Jenkins+Gradle+svn搭建">
+<meta name="twitter:description" content="Jenkins+gradle+svn+windows自动化编译、上传svn最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从svn上面拉取代码到本地上编译生成apk文件，再自动上传到svn，并可以自动发出邮件给相关人员。虽然网上也有很多关于这方面的资料。但是这篇文章有网上没有的 apk注入svn源码路径、版本号、jenkins build号apk注入svn源">
+<meta name="twitter:image" content="http://yoursite.com/images/download.png">
 
 
 
@@ -155,7 +155,7 @@
 
 
 
-  <title> | zipp</title>
+  <title>Jenkins+Gradle+svn搭建 | zipp</title>
   
 
 
@@ -223,7 +223,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -233,7 +233,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -253,7 +253,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -263,7 +263,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -271,9 +271,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -307,7 +341,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="贺志鹏">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://raw.githubusercontent.com/hezhipengzipp/hezhipengzipp.github.io/master/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -319,7 +353,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">Jenkins+Gradle+svn搭建</h1>
         
 
         <div class="post-meta">
@@ -331,7 +365,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-30T10:57:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-30T18:19:30+08:00">
                 2017-08-30
               </time>
             
@@ -342,6 +376,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Jenkins/" itemprop="url" rel="index">
+                    <span itemprop="name">Jenkins</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -349,7 +405,23 @@
 
           
           
+             <span id="/2017/08/30/Jenkins搭建/" class="leancloud_visitors" data-flag-title="Jenkins+Gradle+svn搭建">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
           
 
           
@@ -369,28 +441,30 @@
       
 
       
-        <p>#Jenkins+gradle+svn+windows自动化编译、上传svn#<br>    最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从svn上面拉取代码到本地上编译生成apk文件，再<br>    自动上传到svn，并可以自动发出邮件给相关人员。虽然网上也有很多关于这方面的资料。但是这篇文章有网上没有的<br><strong>apk注入svn源码路径、版本号、jenkins build号</strong><br><br><strong>apk注入svn源码路径、版本号、jenkins build号</strong><br><br><strong>apk注入svn源码路径、版本号、jenkins build号</strong><br></p>
+        <h1 id="Jenkins-gradle-svn-windows自动化编译、上传svn"><a href="#Jenkins-gradle-svn-windows自动化编译、上传svn" class="headerlink" title="Jenkins+gradle+svn+windows自动化编译、上传svn"></a>Jenkins+gradle+svn+windows自动化编译、上传svn</h1><pre><code>最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从svn上面拉取代码到本地上编译生成apk文件，再自动上传到svn，并可以自动发出邮件给相关人员。虽然网上也有很多关于这方面的资料。但是这篇文章有网上没有的
+</code></pre><p><strong>apk注入svn源码路径、版本号、jenkins build号</strong><br><br><strong>apk注入svn源码路径、版本号、jenkins build号</strong><br><br><strong>apk注入svn源码路径、版本号、jenkins build号</strong><br></p>
+<a id="more"></a>
 <h2 id="需求介绍"><a href="#需求介绍" class="headerlink" title="需求介绍"></a>需求介绍</h2><pre><code>1.由于公司开发需求，研发人员给测试人员发出svn源码路径、svn版本号，测试人员构建自动化打包、
 编译apk文件自动上传到svn上。
 2.为了追溯线上问题，apk文件需要注入编译svn源码路径、版本号以及jenkins build号。
 </code></pre><h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><pre><code>1.Jenkins下载地址：https://jenkins.io/download/，里面有两个安装版本：LTS(稳定版本)和Weekly(开发版本)，Weekly版本每周
 2.都会更新的，我们选择LTS的，避免以后使用中出现问题。
-</code></pre><p><img src="download.png" alt="点击下载"><br><br>    3.点击windows版或者.war，windows启动时通过dos命令行方式启动的，而war包是可以通过tomcat服务器启动的<br><br>    4.将下载的jenkins.war放到Tomcat下的webapps目录下，然后启动Tomcat。在浏览器中访问”Tomcat访问地址/jenkins”即可安装，因为<br>    我的Tomcat装在本机，并且端口为8080，所以访问<a href="http://localhost:8080/jenkins/即可进行安装。" target="_blank" rel="external">http://localhost:8080/jenkins/即可进行安装。</a></p>
+</code></pre><p><img src="/images/download.png" alt=""><br><br>    3.点击windows版或者.war，windows启动时通过dos命令行方式启动的，而war包是可以通过tomcat服务器启动的<br><br>    4.将下载的jenkins.war放到Tomcat下的webapps目录下，然后启动Tomcat。在浏览器中访问”Tomcat访问地址/jenkins”即可安装，因为<br>    我的Tomcat装在本机，并且端口为8080，所以访问<a href="http://localhost:8080/jenkins/即可进行安装。" target="_blank" rel="external">http://localhost:8080/jenkins/即可进行安装。</a></p>
 <h2 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h2><pre><code>1.点击系统管理，再点击插件管理，本项目代码管理工具为svn,安装需为svn、gradle、Build Environment Plugin（apk可以拿到构建的环境变量）、
 Build With Parameters（编译时可以注入一些动态的参数）
 </code></pre><h2 id="新建Job"><a href="#新建Job" class="headerlink" title="新建Job"></a>新建Job</h2><h3 id="参数化构建"><a href="#参数化构建" class="headerlink" title="参数化构建"></a>参数化构建</h3><pre><code>1.点击新建、输入项目名称、选择一个自由风格的、最后点击ok,一个job建构成功。
-</code></pre><p><img src="new_construc.png" alt="点击下载"><br><br>    2.点击项目名称（例如CMT1.1_Android）,然后再点击项目配置。<br><img src="setting.png" alt="点击下载"><br><br>    3.如果没有看到参数化构建过程，可能是你的插件没有安装。BUILD_TYPE是指打包的类型为debug与release,我们在build.gradle文件中<br>    可以获取这个值，根据值的类型，输入包的名字也不一样，release需要配置签名信息。后面我会把build.gradle文件贴出。<br><img src="set_channel.png" alt="点击下载"><br><br>    4.上面配置的是打包的渠道，选择控制则是多渠道打包。<br><img src="set_ip.png" alt="点击下载"><br><br>    5.项目开发环境ip、port和测试环境、正式环境ip及port都是不一样的，可以让测试人员动态去修改项目中的ip、port。</p>
-<h3 id="源码管理"><a href="#源码管理" class="headerlink" title="源码管理"></a>源码管理</h3><p><img src="set_sourCode.png" alt="点击下载"><br><br>    1.配置源码路径、Credentials就是配置源码svn账户，为空则点击add</p>
+</code></pre><p><img src="/images/new_construc.png" alt=""><br><br>    2.点击项目名称（例如CMT1.1_Android）,然后再点击项目配置。<br><img src="/images/setting.png" alt=""><br><br>    3.如果没有看到参数化构建过程，可能是你的插件没有安装。BUILD_TYPE是指打包的类型为debug与release,我们在build.gradle文件中<br>    可以获取这个值，根据值的类型，输入包的名字也不一样，release需要配置签名信息。后面我会把build.gradle文件贴出。<br><img src="/images/set_channel.png" alt=""><br><br>    4.上面配置的是打包的渠道，选择控制则是多渠道打包。<br><img src="/images/set_ip.png" alt=""><br><br>    5.项目开发环境ip、port和测试环境、正式环境ip及port都是不一样的，可以让测试人员动态去修改项目中的ip、port。</p>
+<h3 id="源码管理"><a href="#源码管理" class="headerlink" title="源码管理"></a>源码管理</h3><p><img src="/images/set_sourCode.png" alt=""><br><br>    1.配置源码路径、Credentials就是配置源码svn账户，为空则点击add</p>
 <h3 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h3><pre><code>1.构建下面、我们点击增加构建步骤，因为Android我们选择gradle脚本编译，选择invoke Gradle script,如下图显示。
-</code></pre><p><img src="set_invoke.png" alt="点击下载"><br></p>
-<h3 id="Execute-Windows-batch-command"><a href="#Execute-Windows-batch-command" class="headerlink" title="Execute Windows batch command"></a>Execute Windows batch command</h3><p><img src="set_command.png" alt="点击下载"><br></p>
+</code></pre><p><img src="/images/set_invoke.png" alt=""><br></p>
+<h3 id="Execute-Windows-batch-command"><a href="#Execute-Windows-batch-command" class="headerlink" title="Execute Windows batch command"></a>Execute Windows batch command</h3><p><img src="/images/set_command.png" alt=""><br></p>
 <blockquote>
 <p>我改变apk文件输出路径，切换目录，然后使用windows command进行上传apk文件。</p>
 <h3 id="构建后操作"><a href="#构建后操作" class="headerlink" title="构建后操作"></a>构建后操作</h3><pre><code>1.构建后操作主要是发出邮件通知
-</code></pre><p><img src="set_last.png" alt="点击下载"><br><br>以上的操作说明可能不是很详细，网上说的已经比较详细，可以自行google,公司项目Jenkins配置是一台虚拟机，而编译机又是另外一台虚拟机，<br>如果是有这样的需求，那你需要配置节点，配置好节点就如同jenkins是在你那台的虚拟机上编译的</p>
-<h3 id="节点配置"><a href="#节点配置" class="headerlink" title="节点配置"></a>节点配置</h3><p><img src="set_node.png" alt="点击下载"><br><br>可以参考这个大神节点配置：<a href="http://www.cnblogs.com/juddhu/p/3198191.html" target="_blank" rel="external">http://www.cnblogs.com/juddhu/p/3198191.html</a><br>    1.进入需要控制的远程机器上，一定要进入远程的slave编译机器，而不是你的master jenkins机器。输入对应的你的jenkins的地址<br><br><img src="node_conect.png" alt=""><br><br>出现如上图示，则表明连接成功。</p>
+</code></pre><p><img src="/images/set_last.png" alt=""><br><br>以上的操作说明可能不是很详细，网上说的已经比较详细，可以自行google,公司项目Jenkins配置是一台虚拟机，而编译机又是另外一台虚拟机，<br>如果是有这样的需求，那你需要配置节点，配置好节点就如同jenkins是在你那台的虚拟机上编译的</p>
+<h3 id="节点配置"><a href="#节点配置" class="headerlink" title="节点配置"></a>节点配置</h3><p><img src="/images/set_node.png" alt=""><br><br>可以参考这个大神节点配置：<a href="http://www.cnblogs.com/juddhu/p/3198191.html" target="_blank" rel="external">http://www.cnblogs.com/juddhu/p/3198191.html</a><br>    1.进入需要控制的远程机器上，一定要进入远程的slave编译机器，而不是你的master jenkins机器。输入对应的你的jenkins的地址<br><br><img src="/images/node_conect.png" alt=""><br><br>出现如上图示，则表明连接成功。</p>
 <h2 id="构建参数化注入"><a href="#构建参数化注入" class="headerlink" title="构建参数化注入"></a>构建参数化注入</h2><pre><code>-刚刚上面提到了构建参数化，打包编译时参数怎么注入到项目中来了，在项目中最外层的gradle.properties中进行注入。如图所示：
-</code></pre><p><img src="set_gradle.png" alt=""><br><br>然后我们具体怎么取到这些值，在app项目中的build.gradle文件中获取：<br><img src="set_app_build.png" alt=""><br><br>    整个build.gradle文件代码如下：<br><br>    `apply plugin: ‘com.android.application’</p>
+</code></pre><p><img src="/images/set_gradle.png" alt=""><br><br>然后我们具体怎么取到这些值，在app项目中的build.gradle文件中获取：<br><img src="/images/set_app_build.png" alt=""><br><br>    整个build.gradle文件代码如下：<br><br>    `apply plugin: ‘com.android.application’</p>
 </blockquote>
 <pre><code>apply plugin: &apos;com.jakewharton.butterknife&apos;
 
@@ -715,7 +789,7 @@ svn版本号以及jenkins build号。
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="https://raw.githubusercontent.com/hezhipengzipp/hezhipengzipp.github.io/master/images/avatar.jpg"
                alt="贺志鹏" />
           <p class="site-author-name" itemprop="name">贺志鹏</p>
            
@@ -736,6 +810,15 @@ svn版本号以及jenkins build号。
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
           
 
@@ -744,6 +827,19 @@ svn版本号以及jenkins build号。
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/hezhipengzipp" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
           
         </div>
 
@@ -768,7 +864,7 @@ svn版本号以及jenkins build号。
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需求介绍"><span class="nav-number">1.</span> <span class="nav-text">需求介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建"><span class="nav-number">2.</span> <span class="nav-text">搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件安装"><span class="nav-number">3.</span> <span class="nav-text">插件安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建Job"><span class="nav-number">4.</span> <span class="nav-text">新建Job</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参数化构建"><span class="nav-number">4.1.</span> <span class="nav-text">参数化构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码管理"><span class="nav-number">4.2.</span> <span class="nav-text">源码管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建"><span class="nav-number">4.3.</span> <span class="nav-text">构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Execute-Windows-batch-command"><span class="nav-number">4.4.</span> <span class="nav-text">Execute Windows batch command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建后操作"><span class="nav-number">4.5.</span> <span class="nav-text">构建后操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点配置"><span class="nav-number">4.6.</span> <span class="nav-text">节点配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建参数化注入"><span class="nav-number">5.</span> <span class="nav-text">构建参数化注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Jenkins-gradle-svn-windows自动化编译、上传svn"><span class="nav-number">1.</span> <span class="nav-text">Jenkins+gradle+svn+windows自动化编译、上传svn</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#需求介绍"><span class="nav-number">1.1.</span> <span class="nav-text">需求介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建"><span class="nav-number">1.2.</span> <span class="nav-text">搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件安装"><span class="nav-number">1.3.</span> <span class="nav-text">插件安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建Job"><span class="nav-number">1.4.</span> <span class="nav-text">新建Job</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参数化构建"><span class="nav-number">1.4.1.</span> <span class="nav-text">参数化构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码管理"><span class="nav-number">1.4.2.</span> <span class="nav-text">源码管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建"><span class="nav-number">1.4.3.</span> <span class="nav-text">构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Execute-Windows-batch-command"><span class="nav-number">1.4.4.</span> <span class="nav-text">Execute Windows batch command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建后操作"><span class="nav-number">1.4.5.</span> <span class="nav-text">构建后操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点配置"><span class="nav-number">1.4.6.</span> <span class="nav-text">节点配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建参数化注入"><span class="nav-number">1.5.</span> <span class="nav-text">构建参数化注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.6.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -809,6 +905,26 @@ svn版本号以及jenkins build号。
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
 
 
@@ -937,11 +1053,435 @@ svn版本号以及jenkins build号。
 
   
 
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
 
 
 
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("AzrtY6YWR9M4YaLVBf7GGAEW-gzGzoHsz", "PDKhlPaosJsFIsHGYe34k5Lv");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 

@@ -115,7 +115,7 @@
 <meta property="og:image" content="http://yoursite.com/images/node_conect.png">
 <meta property="og:image" content="http://yoursite.com/images/set_gradle.png">
 <meta property="og:image" content="http://yoursite.com/images/set_app_build.png">
-<meta property="og:updated_time" content="2017-08-30T09:58:32.331Z">
+<meta property="og:updated_time" content="2017-08-30T10:01:41.236Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jenkins+Gradle+svn搭建">
 <meta name="twitter:description" content="Jenkins+gradle+svn+windows自动化编译、上传svn最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从svn上面拉取代码到本地 上编译生成apk文件，再自动上传到svn，并可以自动发出邮件给相关人员。虽然网上也有很多关于这方面的资料。 但是这篇文章有网上没有的">
@@ -441,31 +441,31 @@
       
 
       
-        <h1 id="Jenkins-gradle-svn-windows自动化编译、上传svn"><a href="#Jenkins-gradle-svn-windows自动化编译、上传svn" class="headerlink" title="Jenkins+gradle+svn+windows自动化编译、上传svn"></a>Jenkins+gradle+svn+windows自动化编译、上传svn</h1><pre><code>最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从svn上面拉取代码到本地
+        <h2 id="Jenkins-gradle-svn-windows自动化编译、上传svn"><a href="#Jenkins-gradle-svn-windows自动化编译、上传svn" class="headerlink" title="Jenkins+gradle+svn+windows自动化编译、上传svn"></a>Jenkins+gradle+svn+windows自动化编译、上传svn</h2><pre><code>最近公司业务需求比较少，空闲下来。把之前搭建jenkins分享给大家，Jenkins可以从svn上面拉取代码到本地
 上编译生成apk文件，再自动上传到svn，并可以自动发出邮件给相关人员。虽然网上也有很多关于这方面的资料。
 但是这篇文章有网上没有的
 </code></pre><a id="more"></a>
 <p><strong>apk注入svn源码路径、版本号、jenkins build号</strong><br><br><strong>apk注入svn源码路径、版本号、jenkins build号</strong><br><br><strong>apk注入svn源码路径、版本号、jenkins build号</strong><br></p>
-<h2 id="需求介绍"><a href="#需求介绍" class="headerlink" title="需求介绍"></a>需求介绍</h2><pre><code>1.由于公司开发需求，研发人员给测试人员发出svn源码路径、svn版本号，测试人员构建自动化打包、
+<h3 id="需求介绍"><a href="#需求介绍" class="headerlink" title="需求介绍"></a>需求介绍</h3><pre><code>1.由于公司开发需求，研发人员给测试人员发出svn源码路径、svn版本号，测试人员构建自动化打包、
 编译apk文件自动上传到svn上。
 2.为了追溯线上问题，apk文件需要注入编译svn源码路径、版本号以及jenkins build号。
-</code></pre><h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><pre><code>1.Jenkins下载地址：https://jenkins.io/download/，里面有两个安装版本：LTS(稳定版本)和Weekly(开发版本)，Weekly版本每周
+</code></pre><h3 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h3><pre><code>1.Jenkins下载地址：https://jenkins.io/download/，里面有两个安装版本：LTS(稳定版本)和Weekly(开发版本)，Weekly版本每周
 2.都会更新的，我们选择LTS的，避免以后使用中出现问题。
 </code></pre><p><img src="/images/download.png" alt=""><br><br>    3.点击windows版或者.war，windows启动时通过dos命令行方式启动的，而war包是可以通过tomcat服务器启动的<br><br>    4.将下载的jenkins.war放到Tomcat下的webapps目录下，然后启动Tomcat。在浏览器中访问”Tomcat访问地址/jenkins”即可安装，因为<br>    我的Tomcat装在本机，并且端口为8080，所以访问<a href="http://localhost:8080/jenkins/即可进行安装。" target="_blank" rel="external">http://localhost:8080/jenkins/即可进行安装。</a></p>
-<h2 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h2><pre><code>1.点击系统管理，再点击插件管理，本项目代码管理工具为svn,安装需为svn、gradle、Build Environment Plugin（apk可以拿到构建的环境变量）、
+<h3 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h3><pre><code>1.点击系统管理，再点击插件管理，本项目代码管理工具为svn,安装需为svn、gradle、Build Environment Plugin（apk可以拿到构建的环境变量）、
 Build With Parameters（编译时可以注入一些动态的参数）
-</code></pre><h2 id="新建Job"><a href="#新建Job" class="headerlink" title="新建Job"></a>新建Job</h2><h3 id="参数化构建"><a href="#参数化构建" class="headerlink" title="参数化构建"></a>参数化构建</h3><pre><code>1.点击新建、输入项目名称、选择一个自由风格的、最后点击ok,一个job建构成功。
+</code></pre><h3 id="新建Job"><a href="#新建Job" class="headerlink" title="新建Job"></a>新建Job</h3><h4 id="参数化构建"><a href="#参数化构建" class="headerlink" title="参数化构建"></a>参数化构建</h4><pre><code>1.点击新建、输入项目名称、选择一个自由风格的、最后点击ok,一个job建构成功。
 </code></pre><p><img src="/images/new_construc.png" alt=""><br><br>    2.点击项目名称（例如CMT1.1_Android）,然后再点击项目配置。<br><img src="/images/setting.png" alt=""><br><br>    3.如果没有看到参数化构建过程，可能是你的插件没有安装。BUILD_TYPE是指打包的类型为debug与release,我们在build.gradle文件中<br>    可以获取这个值，根据值的类型，输入包的名字也不一样，release需要配置签名信息。后面我会把build.gradle文件贴出。<br><img src="/images/set_channel.png" alt=""><br><br>    4.上面配置的是打包的渠道，选择控制则是多渠道打包。<br><img src="/images/set_ip.png" alt=""><br><br>    5.项目开发环境ip、port和测试环境、正式环境ip及port都是不一样的，可以让测试人员动态去修改项目中的ip、port。</p>
-<h3 id="源码管理"><a href="#源码管理" class="headerlink" title="源码管理"></a>源码管理</h3><p><img src="/images/set_sourCode.png" alt=""><br><br>    1.配置源码路径、Credentials就是配置源码svn账户，为空则点击add</p>
-<h3 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h3><pre><code>1.构建下面、我们点击增加构建步骤，因为Android我们选择gradle脚本编译，选择invoke Gradle script,如下图显示。
+<h4 id="源码管理"><a href="#源码管理" class="headerlink" title="源码管理"></a>源码管理</h4><p><img src="/images/set_sourCode.png" alt=""><br><br>    1.配置源码路径、Credentials就是配置源码svn账户，为空则点击add</p>
+<h4 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h4><pre><code>1.构建下面、我们点击增加构建步骤，因为Android我们选择gradle脚本编译，选择invoke Gradle script,如下图显示。
 </code></pre><p><img src="/images/set_invoke.png" alt=""><br></p>
-<h3 id="Execute-Windows-batch-command"><a href="#Execute-Windows-batch-command" class="headerlink" title="Execute Windows batch command"></a>Execute Windows batch command</h3><p><img src="/images/set_command.png" alt=""><br></p>
+<h4 id="Execute-Windows-batch-command"><a href="#Execute-Windows-batch-command" class="headerlink" title="Execute Windows batch command"></a>Execute Windows batch command</h4><p><img src="/images/set_command.png" alt=""><br></p>
 <blockquote>
 <p>我改变apk文件输出路径，切换目录，然后使用windows command进行上传apk文件。</p>
-<h3 id="构建后操作"><a href="#构建后操作" class="headerlink" title="构建后操作"></a>构建后操作</h3><pre><code>1.构建后操作主要是发出邮件通知
+<h4 id="构建后操作"><a href="#构建后操作" class="headerlink" title="构建后操作"></a>构建后操作</h4><pre><code>1.构建后操作主要是发出邮件通知
 </code></pre><p><img src="/images/set_last.png" alt=""><br><br>以上的操作说明可能不是很详细，网上说的已经比较详细，可以自行google,公司项目Jenkins配置是一台虚拟机，而编译机又是另外一台虚拟机，<br>如果是有这样的需求，那你需要配置节点，配置好节点就如同jenkins是在你那台的虚拟机上编译的</p>
-<h3 id="节点配置"><a href="#节点配置" class="headerlink" title="节点配置"></a>节点配置</h3><p><img src="/images/set_node.png" alt=""><br><br>可以参考这个大神节点配置：<a href="http://www.cnblogs.com/juddhu/p/3198191.html" target="_blank" rel="external">http://www.cnblogs.com/juddhu/p/3198191.html</a><br>    1.进入需要控制的远程机器上，一定要进入远程的slave编译机器，而不是你的master jenkins机器。输入对应的你的jenkins的地址<br><br><img src="/images/node_conect.png" alt=""><br><br>出现如上图示，则表明连接成功。</p>
-<h2 id="构建参数化注入"><a href="#构建参数化注入" class="headerlink" title="构建参数化注入"></a>构建参数化注入</h2><pre><code>-刚刚上面提到了构建参数化，打包编译时参数怎么注入到项目中来了，在项目中最外层的gradle.properties中进行注入。如图所示：
+<h4 id="节点配置"><a href="#节点配置" class="headerlink" title="节点配置"></a>节点配置</h4><p><img src="/images/set_node.png" alt=""><br><br>可以参考这个大神节点配置：<a href="http://www.cnblogs.com/juddhu/p/3198191.html" target="_blank" rel="external">http://www.cnblogs.com/juddhu/p/3198191.html</a><br>    1.进入需要控制的远程机器上，一定要进入远程的slave编译机器，而不是你的master jenkins机器。输入对应的你的jenkins的地址<br><br><img src="/images/node_conect.png" alt=""><br><br>出现如上图示，则表明连接成功。</p>
+<h3 id="构建参数化注入"><a href="#构建参数化注入" class="headerlink" title="构建参数化注入"></a>构建参数化注入</h3><pre><code>-刚刚上面提到了构建参数化，打包编译时参数怎么注入到项目中来了，在项目中最外层的gradle.properties中进行注入。如图所示：
 </code></pre><p><img src="/images/set_gradle.png" alt=""><br><br>然后我们具体怎么取到这些值，在app项目中的build.gradle文件中获取：<br><img src="/images/set_app_build.png" alt=""><br><br>    整个build.gradle文件代码如下：<br><br>    `apply plugin: ‘com.android.application’</p>
 </blockquote>
 <pre><code>apply plugin: &apos;com.jakewharton.butterknife&apos;
@@ -691,7 +691,7 @@ if (flag) {
 }
 }
 </code></pre><p>`</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><pre><code>1.以上gradle脚本获取可以动态获取jenkins构建的参数，指定apk文件输出路径。项目在关于界面，连续点击五次，可以显示项目svn源码路径，
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><pre><code>1.以上gradle脚本获取可以动态获取jenkins构建的参数，指定apk文件输出路径。项目在关于界面，连续点击五次，可以显示项目svn源码路径，
 svn版本号以及jenkins build号。
 2.第一次写博客。给个star行不行？？？
 </code></pre>
@@ -866,7 +866,7 @@ svn版本号以及jenkins build号。
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Jenkins-gradle-svn-windows自动化编译、上传svn"><span class="nav-number">1.</span> <span class="nav-text">Jenkins+gradle+svn+windows自动化编译、上传svn</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#需求介绍"><span class="nav-number">1.1.</span> <span class="nav-text">需求介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建"><span class="nav-number">1.2.</span> <span class="nav-text">搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件安装"><span class="nav-number">1.3.</span> <span class="nav-text">插件安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建Job"><span class="nav-number">1.4.</span> <span class="nav-text">新建Job</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参数化构建"><span class="nav-number">1.4.1.</span> <span class="nav-text">参数化构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码管理"><span class="nav-number">1.4.2.</span> <span class="nav-text">源码管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建"><span class="nav-number">1.4.3.</span> <span class="nav-text">构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Execute-Windows-batch-command"><span class="nav-number">1.4.4.</span> <span class="nav-text">Execute Windows batch command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建后操作"><span class="nav-number">1.4.5.</span> <span class="nav-text">构建后操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点配置"><span class="nav-number">1.4.6.</span> <span class="nav-text">节点配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建参数化注入"><span class="nav-number">1.5.</span> <span class="nav-text">构建参数化注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.6.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins-gradle-svn-windows自动化编译、上传svn"><span class="nav-number">1.</span> <span class="nav-text">Jenkins+gradle+svn+windows自动化编译、上传svn</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求介绍"><span class="nav-number">1.1.</span> <span class="nav-text">需求介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建"><span class="nav-number">1.2.</span> <span class="nav-text">搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插件安装"><span class="nav-number">1.3.</span> <span class="nav-text">插件安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建Job"><span class="nav-number">1.4.</span> <span class="nav-text">新建Job</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参数化构建"><span class="nav-number">1.4.1.</span> <span class="nav-text">参数化构建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#源码管理"><span class="nav-number">1.4.2.</span> <span class="nav-text">源码管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构建"><span class="nav-number">1.4.3.</span> <span class="nav-text">构建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Execute-Windows-batch-command"><span class="nav-number">1.4.4.</span> <span class="nav-text">Execute Windows batch command</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构建后操作"><span class="nav-number">1.4.5.</span> <span class="nav-text">构建后操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#节点配置"><span class="nav-number">1.4.6.</span> <span class="nav-text">节点配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建参数化注入"><span class="nav-number">1.5.</span> <span class="nav-text">构建参数化注入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.6.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
 
           </div>
